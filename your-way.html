@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Way — Custom Build · Éirelign</title>
+  <meta name="description" content="Choose colours, pattern, finish and optional engraving. Preview live then add to cart." />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner container">
+      <div class="brand-compact"><div class="site-title">Éirelign</div><small>Dublin, Ireland — Est. 2025</small></div>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a><a href="collection.html">Collection</a><a href="your-way.html">Your Way</a><a href="tutorial.html">Tutorial</a><a href="contact.html">Contact Us</a>
+      </nav>
+      <div class="actions"><a href="cart.html" aria-label="Cart">🛒 Cart <span class="badge" data-cart-count>0</span></a></div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h1 id="config-name">Custom Build — matte, none, #00e0b8/#58a6ff · €40</h1>
+    <div class="card" style="padding:1rem;">
+      <form id="config-form" aria-describedby="config-help">
+        <p id="config-help" class="meta">Choose colours, pattern, finish and optional engraving. Live preview on the right.</p>
+
+        <div style="display:grid;grid-template-columns:1fr;gap:1rem;">
+          <label>Primary colour
+            <input type="color" name="primary" value="#00e0b8" />
+          </label>
+          <label>Accent colour
+            <input type="color" name="accent" value="#58a6ff" />
+          </label>
+          <label>Pattern
+            <select name="pattern">
+              <option value="none">None</option>
+              <option value="stripes">Subtle stripes</option>
+              <option value="speckles">Speckles</option>
+            </select>
+          </label>
+          <fieldset>
+            <legend>Finish</legend>
+            <label><input type="radio" name="finish" value="matte" checked /> Matte</label>
+            <label><input type="radio" name="finish" value="gloss" /> Gloss</label>
+          </fieldset>
+          <label>Engraving (optional, 16 chars)
+            <input type="text" name="engraving" inputmode="latin" maxlength="16" aria-describedby="engrave-count-note" />
+          </label>
+          <small id="engrave-count-note">Allowed: letters, numbers, space, -, .    <span id="engrave-count">0/16</span></small>
+
+          <div>
+            <button id="btn-add" type="button">Add to cart</button>
+          </div>
+        </div>
+      </form>
+
+      <h2>Live Preview</h2>
+      <svg id="preview-svg" viewBox="0 0 600 120" role="img" aria-label="Alignment stick preview" style="width:100%;max-width:600px;border:1px solid var(--line);border-radius:12px;">
+        <rect id="shape-primary" x="10" y="50" width="580" height="20" rx="10" fill="#00e0b8"></rect>
+        <rect id="shape-accent" x="10" y="50" width="580" height="20" rx="10" fill="none" stroke="#58a6ff" stroke-width="3"></rect>
+        <rect id="panel" x="10" y="50" width="580" height="20" rx="10" opacity="0.10" fill="#ffffff"></rect>
+        <g id="pattern-stripes" style="display:none">
+          <rect x="20" y="50" width="10" height="20" fill="#ffffff" opacity="0.25"></rect>
+          <rect x="50" y="50" width="10" height="20" fill="#ffffff" opacity="0.25"></rect>
+          <rect x="80" y="50" width="10" height="20" fill="#ffffff" opacity="0.25"></rect>
+        </g>
+        <g id="pattern-speckles" style="display:none">
+          <circle cx="40" cy="60" r="2" fill="#ffffff" opacity="0.25"></circle>
+          <circle cx="70" cy="58" r="2" fill="#ffffff" opacity="0.25"></circle>
+          <circle cx="100" cy="62" r="2" fill="#ffffff" opacity="0.25"></circle>
+        </g>
+        <text id="engrave-preview" x="300" y="45" text-anchor="middle" fill="currentColor" font-size="12" style="font-family: system-ui;"> </text>
+      </svg>
+    </div>
+  </main>
+
+  <footer class="footer"><div class="container">© 2025 Éirelign · All rights reserved. Made with ❤️ in Dublin</div></footer>
+
+  <noscript><div class="container" style="margin:1rem 0;">Note: Customizer needs JavaScript enabled.</div></noscript>
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/configurator.js"></script>
+</body>
+</html>

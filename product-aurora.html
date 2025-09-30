@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aurora Slate — Éirelign</title>
+  <meta name="description" content="Aurora Slate wooden alignment stick — minimalist, durable finish." />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta property="og:type" content="product" />
+  <meta property="og:title" content="Aurora Slate — Éirelign" />
+  <meta property="product:price:amount" content="34.99" />
+  <meta property="product:price:currency" content="EUR" />
+</head>
+<body>
+  <header class="header"> 
+    <div class="header-inner container"> 
+      <div class="brand-compact"><div class="site-title">Éirelign</div><small>Dublin, Ireland — Est. 2025</small></div> 
+      <nav class="nav" aria-label="Primary"> 
+        <a href="index.html">Home</a><a href="collection.html">Collection</a><a href="your-way.html">Your Way</a><a href="tutorial.html">Tutorial</a><a href="contact.html">Contact Us</a> 
+      </nav> 
+      <div class="actions"><a href="cart.html" aria-label="Cart">🛒 Cart <span class="badge" data-cart-count>0</span></a></div> 
+    </div> 
+  </header>
+
+  <main class="container section"> 
+    <div class="card" style="padding:1rem;"> 
+      <div class="media" aria-hidden="true">Aurora Slate product image</div> 
+      <div class="body"> 
+        <h1>Aurora Slate</h1> 
+        <p class="meta">€34.99 · Free delivery in Ireland on orders over €50</p> 
+        <p>A short, benefit‑led description of the alignment stick. Materials, finish, and key features here.</p> 
+        <button id="btn-add" type="button">Add to cart</button> 
+      </div> 
+    </div> 
+  </main>
+
+  <footer class="footer"><div class="container">© 2025 Éirelign · All rights reserved. Made with ❤️ in Dublin</div></footer>
+  <noscript><div class="container" style="margin:1rem 0;">Note: Cart needs JavaScript enabled.</div></noscript>
+  <script defer src="assets/js/main.js"></script>
+  <script>document.addEventListener('DOMContentLoaded',()=>{ const btn=document.getElementById('btn-add'); if(!btn) return; btn.addEventListener('click',()=>{ const item={ name:'Aurora Slate', price:34.99, sku:'AUR-SLT' }; window.EirelignCart?.addToCart(item); });});</script>
+  <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Product",
+  "name":"Aurora Slate",
+  "brand":"Éirelign",
+  "offers":{"@type":"Offer","priceCurrency":"EUR","price":"34.99","availability":"https://schema.org/InStock"}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cart — Éirelign</title>
+  <meta name="description" content="Review your items and proceed to checkout." />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner container">
+      <div class="brand-compact"><div class="site-title">Éirelign</div><small>Dublin, Ireland — Est. 2025</small></div>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a><a href="collection.html">Collection</a><a href="your-way.html">Your Way</a><a href="tutorial.html">Tutorial</a><a href="contact.html">Contact Us</a>
+      </nav>
+      <div class="actions"><a href="cart.html" aria-label="Cart">🛒 Cart <span class="badge" data-cart-count>0</span></a></div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h1>Cart</h1>
+
+    <div id="cart-empty" class="card" style="padding:1rem; display:none;">
+      Your cart is empty. <a href="collection.html">Browse the Collection</a> or <a href="your-way.html">build it Your Way</a>.
+    </div>
+
+    <div id="cart-filled" style="display:none;">
+      <table class="table" aria-describedby="cart-help">
+        <caption class="sr-only" id="cart-help">Cart items with quantities and totals.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Price</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Total</th>
+            <th scope="col"><span class="sr-only">Actions</span></th>
+          </tr>
+        </thead>
+        <tbody id="cart-body"></tbody>
+      </table>
+
+      <p class="meta">Taxes and shipping calculated at checkout.</p>
+      <p><strong>Subtotal:</strong> <span id="subtotal">€0.00</span></p>
+
+      <div style="display:flex; gap:.5rem; flex-wrap:wrap;">
+        <a href="collection.html">Continue shopping</a>
+        <button type="button" disabled title="Checkout not connected yet">Proceed to checkout</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer"><div class="container">© 2025 Éirelign · All rights reserved. Made with ❤️ in Dublin</div></footer>
+
+  <noscript><div class="container" style="margin:1rem 0;">Note: Cart needs JavaScript enabled.</div></noscript>
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/cart.js"></script>
+</body>
+</html>
