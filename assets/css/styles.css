@@ -101,3 +101,30 @@ img { max-width: 100%; height: auto; display: block; }
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 
+
+.mini-cart {
+  position: fixed;
+  top: 70px;
+  right: 24px;
+  width: 320px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(16,24,40,.16);
+  z-index: 2000;
+  border: 1px solid #e2e8f0;
+  padding: 1.2rem;
+  animation: fadeIn .3s;
+}
+.mini-cart-content h3 { margin-top: 0; }
+.checkout-btn {
+  display: block;
+  margin-top: 1rem;
+  background: var(--brand-2);
+  color: #fff;
+  text-align: center;
+  padding: .7em 0;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
