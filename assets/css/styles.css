@@ -78,7 +78,7 @@ img { max-width: 100%; height: auto; display: block; }
 .qty input { width: 3ch; text-align:center; border:0; padding:.35rem .25rem; }
 /* Focus styles */
 :focus-visible { outline: 2px solid var(--brand-2); outline-offset: 2px; border-radius: 6px; }
-
+/*Add to Cart*/
 
 .add-to-cart {
   display: inline-block;
