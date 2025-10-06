@@ -95,9 +95,7 @@ img { max-width: 100%; height: auto; display: block; }
   letter-spacing: 0.05em;
 }
 .add-to-cart:hover,
-
 .add-to-cart:focus {
   background: linear-gradient(90deg, #58a6ff 0%, #00e0b8 100%);
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-}
