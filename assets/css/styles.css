@@ -83,7 +83,7 @@ img { max-width: 100%; height: auto; display: block; }
 .add-to-cart {
   display: inline-block;
   padding: 0.75em 2em;
-  background: linear-gradient(90deg, #00e0b8 0%, #58a6ff 100%);
+  background: var(--brand-2); /* solid blue fill */
   color: #fff;
   font-size: 1.1em;
   font-weight: 600;
@@ -96,6 +96,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .add-to-cart:hover,
 .add-to-cart:focus {
-  background: linear-gradient(90deg, #58a6ff 0%, #00e0b8 100%);
+  background: #1a3cff; /* slightly darker blue on hover */
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
