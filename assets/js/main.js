@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const items = window.EirelignCart.readCart();
     const grouped = {};
     items.forEach(it => {
-      const key = it.sku || it.name;
+      const key = it.name;
       if (!grouped[key]) grouped[key] = { ...it, qty: 0 };
       grouped[key].qty += 1;
     });
