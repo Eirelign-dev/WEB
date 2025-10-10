@@ -38,7 +38,38 @@
   <footer class="footer"><div class="container">© 2025 Éirelign · All rights reserved. Made with ❤️ in Dublin</div></footer>
   <noscript><div class="container" style="margin:1rem 0;">Note: Cart needs JavaScript enabled.</div></noscript>
   <script defer src="assets/js/main.js"></script>
-  <script>document.addEventListener('DOMContentLoaded',()=>{ const btn=document.getElementById('btn-add'); if(!btn) return; btn.addEventListener('click',()=>{ const item={ name:'Aurora Slate', price:34.99, sku:'AUR-SLT' }; window.EirelignCart?.addToCart(item); });});</script>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('btn-add');
+  const miniCart = document.getElementById('mini-cart');
+  const miniCartItems = document.getElementById('mini-cart-items');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const item = { name: 'Aurora Slate', price: 34.99, sku: 'AUR-SLT' };
+    window.EirelignCart?.addToCart(item);
+
+    // Get all items from cart
+    const items = window.EirelignCart.readCart();
+    // Group items by product
+    const grouped = {};
+    items.forEach(it => {
+      const key = it.sku || it.name;
+      if (!grouped[key]) grouped[key] = { ...it, qty: 0 };
+      grouped[key].qty += 1;
+    });
+
+    // Render items in mini cart
+    miniCartItems.innerHTML = Object.values(grouped)
+      .map(it => `<li>${it.name} × ${it.qty} — €${it.price.toFixed(2)}</li>`)
+      .join('');
+
+    miniCart.style.display = 'block';
+
+    // Hide after 3 seconds (optional)
+    setTimeout(() => { miniCart.style.display = 'none'; }, 3000);
+  });
+});
+</script>
   <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -55,7 +86,6 @@
     <ul id="mini-cart-items"></ul>
     cart.htmlGo to Checkout</a>
   </div>
-</div>
 
 </body>
 </html>
