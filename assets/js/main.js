@@ -76,9 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const miniCartItems = document.getElementById('mini-cart-items');
   if (!btn || !miniCart) return;
 
-  btn.addEventListener('click', () => {
-    const item = { name: 'Aurora Slate', price: 34.99, sku: 'AUR-SLT' };
-    window.EirelignCart?.addToCart(item);
+
 
     const items = window.EirelignCart.readCart();
     const grouped = {};
