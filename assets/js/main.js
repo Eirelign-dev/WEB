@@ -67,3 +67,33 @@
   window.EirelignCart = { readCart, writeCart, addToCart, clearCart, updateCartBadge };
   updateCartBadge();
 })();
+
+
+// Mini Cart Preview Logic
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('btn-add');
+  const miniCart = document.getElementById('mini-cart');
+  const miniCartItems = document.getElementById('mini-cart-items');
+  if (!btn || !miniCart) return;
+
+  btn.addEventListener('click', () => {
+    const item = { name: 'Aurora Slate', price: 34.99, sku: 'AUR-SLT' };
+    window.EirelignCart?.addToCart(item);
+
+    const items = window.EirelignCart.readCart();
+    const grouped = {};
+    items.forEach(it => {
+      const key = it.sku || it.name;
+      if (!grouped[key]) grouped[key] = { ...it, qty: 0 };
+      grouped[key].qty += 1;
+    });
+
+    miniCartItems.innerHTML = Object.values(grouped)
+      .map(it => `<li>${it.name} × ${it.qty} — €${it.price.toFixed(2)}</li>`)
+      .join('');
+
+    miniCart.style.display = 'block';
+    setTimeout(() => { miniCart.style.display = 'none'; }, 3000);
+  });
+});
+
